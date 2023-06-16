@@ -1,0 +1,7 @@
+[project]
+name = "satori-python"
+version = "1.0.0"
+# ...
+dependencies = [
+    "requests >= 2.23.0"
+]
