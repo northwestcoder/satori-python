@@ -28,10 +28,10 @@ def satori_auth(apihost, serviceaccount_id, serviceaccount_key):
 #test_auth = satori_auth(apihost, serviceaccount_id, serviceaccount_key)
 #print(test_auth)
 
-def satori_get_datastores(apihost, account_id, headers):
+def satori_get_datastores(apihost, headers, account_id):
 
 	url =  "https://{}/api/v1/datastore?accountId={}&pageSize=500".format(apihost, account_id)
-	print("trying to find all datastores: " + url)
+	#print("trying to find all datastores: " + url)
 
 	try:
 		response = requests.get(url, headers=headers)
@@ -43,3 +43,17 @@ def satori_get_datastores(apihost, account_id, headers):
 
 #test_datastores = satori_get_datastores(apihost, account_id, satori_auth(apihost, serviceaccount_id, serviceaccount_key))
 #print(test_datastores)
+
+def satori_get_datastore_connection(apihost, headers, datastore_id):
+
+	url =  "https://{}/api/v1/datastore/{}".format(apihost, datastore_id)
+	#print("trying to find datastore : " + datastore_id)
+
+	try:
+		response = requests.get(url, headers=headers)
+		response.raise_for_status()
+	except requests.exceptions.RequestException as err:
+		print("EXCEPTION: ", type(err))
+	else:
+		return response.json()
+
