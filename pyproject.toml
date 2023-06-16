@@ -5,3 +5,4 @@ description = "Python wrappers for the Satori API"
 dependencies = [
     "requests >= 2.23.0"
 ]
+exclude = ["HelloWorld.ipynb"]
