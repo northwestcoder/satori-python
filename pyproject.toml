@@ -1,6 +1,11 @@
 [project]
 name = "satoripython"
 version = "1.0.0"
+description = "Python wrappers for the Satori API"
+license = "Apache-2.0"
+authors = [
+    "Ty Alevizos <northwestcoder@gmail.com>",
+]
 # ...
 dependencies = [
     "requests >= 2.23.0"
