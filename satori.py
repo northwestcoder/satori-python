@@ -1,6 +1,6 @@
-#import json
-#import requests
-#import time
+import json
+import requests
+import time
 
 def satori_auth(apihost, serviceaccount_id, serviceaccount_key):
 
