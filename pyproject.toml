@@ -1,5 +1,5 @@
 [project]
-name = "satori-python"
+name = "satoripython"
 version = "1.0.0"
 # ...
 dependencies = [
