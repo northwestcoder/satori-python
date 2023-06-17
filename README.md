@@ -32,4 +32,7 @@ As you can see from the above screenshot, we simply need to:
 ```
 import satori
 ```
+
 And then we will have access to some convenience wrappers for the Satori Rest API.
+
+The HelloWorld notebook contains a simplistic example of connecting to a postgres database via Satori and then graphing some of the data results.
