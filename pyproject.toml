@@ -3,5 +3,10 @@ name = "satoripython"
 version = "1.0.0"
 description = "Python wrappers for the Satori API"
 dependencies = [
-    "requests >= 2.23.0"
+    "requests >= 2.23.0",
+    "psycopg2-binary>=2.9.3",
+    "pyodbc>=4.0.39",
+    "snowflake-connector-python>=3.0.3",
+    "boto3>=1.26.145",
+    "mysql-connector-python>=8.0.33"
 ]

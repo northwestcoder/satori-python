@@ -1,6 +1,7 @@
 import json
 import requests
 import time
+import psycopg2
 
 def auth(apihost, serviceaccount_id, serviceaccount_key):
 
@@ -56,4 +57,25 @@ def get_datastore_connection(apihost, headers, datastore_id):
 		print("EXCEPTION: ", type(err))
 	else:
 		return response.json()
+
+
+def query_postgres(host, port, database, user, password, sql_query):
+
+	try:
+		result = ''
+		connector = psycopg2.connect(
+			host=host, 
+			port=port, 
+			database=database, 
+			user=user, 
+			password=password,
+			sslmode='require')
+		cur = connector.cursor()
+		cur.execute(sql_query)
+		rows = cur.fetchall()
+		connector.close()
+		return rows
+	except Exception as err:
+		print(err)
+		return str(err)
 
